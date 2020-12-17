@@ -3,6 +3,10 @@ node_js:
  - 11.6.0
 cache: npm
 
+notifications:
+  slack:
+    on_success: always
+    
 jobs:
   include:
     - stage: test
