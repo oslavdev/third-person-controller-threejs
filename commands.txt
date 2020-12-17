@@ -1,0 +1,6 @@
+
+Production
+// docker build -f Dockerfile.dev -t devimage .
+
+Development
+// docker build -t oslawdev/cv -f Dockerfile .
