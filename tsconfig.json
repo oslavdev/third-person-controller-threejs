@@ -15,7 +15,6 @@
       "moduleResolution": "node",
       "removeComments":false,
       "noImplicitAny": false,
-      "strictNullChecks": false,
       "strictFunctionTypes": false,
       "noImplicitThis": false,
       "noUnusedLocals": false,
@@ -24,7 +23,6 @@
       "noFallthroughCasesInSwitch": false,
       "allowSyntheticDefaultImports": true,
       "allowUmdGlobalAccess": true,
-      "esModuleInterop": true,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "resolveJsonModule": true,
@@ -39,11 +37,15 @@
       "forceConsistentCasingInFileNames": true,
       "noEmit": false,
       "isolatedModules": true,
+      "strictNullChecks": false,
+      "esModuleInterop": false,
       "jsx": "react",
     },
     "include": [
       "**/*.ts",
-      "**/*.tsx"
+      "**/*.tsx",
+      "*/index.d.ts",
+      "src/*"
     ],
     "exclude": [
       "node_modules"

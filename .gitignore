@@ -8,3 +8,5 @@ https
 dist
 #cahce
 .cache
+#vscode
+.vscode

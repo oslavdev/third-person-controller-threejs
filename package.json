@@ -7,8 +7,8 @@
     "start": "webpack --mode production",
     "dev": "webpack serve --config webpack.dev.js",
     "test": "jest --ci --reporters=default --reporters=jest-junit --testResultsProcessor=jest-junit",
-    "test:update": "jest -- -u",
-    "test:coverage": "jest - --coverage",
+    "test:update": "npm test -- -u",
+    "test:coverage": "npm test - --coverage",
     "format": "prettier --write \"{,!(node_modules)/**/}*.js\"",
     "lint": "eslint ./ --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix"
@@ -19,11 +19,15 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
+    "drei": "^2.2.12",
     "react": "^17.0.1",
     "react-addons-perf": "^15.4.2",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "react-spring": "^8.0.27",
     "react-styled-components": "^0.1.11",
+    "react-three-fiber": "^5.3.10",
+    "three": "^0.123.0",
     "webpack-merge": "^5.7.2"
   },
   "devDependencies": {
@@ -81,5 +85,6 @@
   "eslintConfig": {
     "extends": "@imaginary-cloud/react"
   },
-  "prettier": "@imaginary-cloud/prettier-config"
+  "prettier": "@imaginary-cloud/prettier-config",
+  "typings": "./src/index.d.ts"
 }
