@@ -6,9 +6,14 @@ cache: npm
 notifications:
   slack: stampede-production:JBtLOLYw1Hoq2VIl1ZiQFxWC
 
-install:
-  - npm install
-
-script:
-  - npm test
-  - npm run build
+jobs:
+include:
+  - stage: "Compile"
+    name: "Compile"
+    install: npm install
+  - stage: "Tests"                
+    name: "Unit Tests"           
+    script: npm test
+  - stage: build
+    name: "Build"
+    script: npm run build
