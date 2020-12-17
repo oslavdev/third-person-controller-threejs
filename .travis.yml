@@ -3,11 +3,9 @@ node_js:
  - 11.6.0
 cache: npm
 
-
 jobs:
   include:
     - stage: test
       script: npm run test
-      after_success: curl -X POST -H 'Content-type: application/json' --data '{"text":"Unit test finished!"}' https://hooks.slack.com/services/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
     - stage: build
       script: npm run build
