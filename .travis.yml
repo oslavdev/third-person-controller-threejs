@@ -6,7 +6,6 @@ cache: npm
 notifications:
   slack: stampede-production:JBtLOLYw1Hoq2VIl1ZiQFxWC
 
-  
 install:
   - npm install
 
