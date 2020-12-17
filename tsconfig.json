@@ -40,12 +40,15 @@
       "strictNullChecks": false,
       "esModuleInterop": false,
       "jsx": "react",
+      "typeRoots": [
+        "src/*",
+        "node_modules/@types"
+      ]
     },
     "include": [
       "**/*.ts",
       "**/*.tsx",
-      "*/index.d.ts",
-      "src/*"
+      "src/index.d.ts"
     ],
     "exclude": [
       "node_modules"

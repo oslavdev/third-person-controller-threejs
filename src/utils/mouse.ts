@@ -1,5 +1,9 @@
 import * as THREE from 'three';
 
+export function getMousePos(e:any):any {
+  return { x: e.clientX, y: e.clientY }
+}
+
 interface Degrees{
   x: number,
   y: number
@@ -48,13 +52,13 @@ export function getMouseDegrees(x:number, y:number, degreeLimit:number):Degrees 
   return { x: dx, y: dy }
 }
 
-interface mouse{
+export interface mouseTypes{
   current: {
     y: number,
     x: number
   }
 };
-interface model{
+export interface modelTypes{
   rotation:{
     xD: number,
     yD: number,
@@ -62,10 +66,11 @@ interface model{
     y: number
   }
 }
-export function move(mouse:mouse, model:model, degreeLimit:number = 40):void {
+
+export function move(mouse:mouseTypes, model:any, degreeLimit:number = 40):void {
   let degrees = getMouseDegrees(mouse.current.x, mouse.current.y, degreeLimit)
   model.rotation.xD = THREE.MathUtils.lerp(model.rotation.xD || 0, degrees.y, 0.1)
   model.rotation.yD = THREE.MathUtils.lerp(model.rotation.yD || 0, degrees.x-25, 0.1)
-  model.rotation.x = THREE.Math.degToRad(model.rotation.xD)
-  model.rotation.y = THREE.Math.degToRad(model.rotation.yD)
+  model.rotation.x = THREE.MathUtils.degToRad(model.rotation.xD)
+  model.rotation.y = THREE.MathUtils.degToRad(model.rotation.yD)
 }

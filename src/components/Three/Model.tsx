@@ -5,6 +5,7 @@ import { Html } from "drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Object3D } from "three/src/core/Object3D"; //Object3D types
 import { AnimationClip } from "three/src/animation/AnimationClip"; //Animation types
+import { move, mouseTypes} from "@/utils/mouse";
 
 interface group {
   current: {
@@ -21,9 +22,15 @@ interface actions {
       play: () => void;
     };
   };
+};
+
+interface ModelProps{
+  url: string,
+  mouse:mouseTypes
 }
 
-const Model = () => {
+const Model: React.FC<ModelProps> = ({ url, mouse }) => {
+  
   /* Refs */
   const group: group = useRef();
   const actions: actions = useRef();
@@ -38,7 +45,7 @@ const Model = () => {
   /* Load model */
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("scene.gltf", async (gltf) => {
+    loader.load(url, async (gltf) => {
       const nodes = await gltf.parser.getDependencies("node");
       const animations = await gltf.parser.getDependencies("animation");
       setModel(nodes[0]);
@@ -59,11 +66,14 @@ const Model = () => {
 
   /* Animation update */
   useFrame((_, delta) => mixer.update(delta));
-  /* Rotation */
-  useFrame(():number|void => {
-    if (typeof group.current != "undefined")
-      return (group.current.rotation.y += 0.01);
-  });
+
+  useFrame((state, delta) => {
+    mixer.update(delta)
+    if (model) {
+      move(mouse, model)
+      move(mouse, model)
+    }
+})
 
   return (
     <>
