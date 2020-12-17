@@ -4,16 +4,25 @@ node_js:
 cache: npm
 
 notifications:
+  email: false
   slack: stampede-production:JBtLOLYw1Hoq2VIl1ZiQFxWC
+    on_success: always
+    on_failure: always 
+     template:
+      - "Repo `%{repository_slug}` *%{result}* build (<%{build_url}|#%{build_number}>) for commit (<%{compare_url}|%{commit}>) on branch `%{branch}`."
+      - "Execution time: *%{duration}*"
+      - "Message: %{message}"
 
 jobs:
-include:
-  - stage: "Compile"
-    name: "Compile"
-    install: npm install
-  - stage: "Tests"                
-    name: "Unit Tests"           
-    script: npm test
-  - stage: build
-    name: "Build"
-    script: npm run build
+  include:
+    - stage: compile
+      name: "Compile"
+      install: npm install
+
+    - stage: tests                
+      name: "Unit Tests"           
+      script: npm test
+
+    - stage: build
+      name: "Build"
+      script: npm run build
