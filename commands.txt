@@ -4,3 +4,5 @@ Production
 
 Development
 // docker build -t oslawdev/cv -f Dockerfile .
+
+Run
