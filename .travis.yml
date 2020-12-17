@@ -3,6 +3,10 @@ node_js:
  - 11.6.0
 cache: npm
 
+notifications:
+  slack: stampede-production:JBtLOLYw1Hoq2VIl1ZiQFxWC
+
+  
 install:
   - npm install
 
