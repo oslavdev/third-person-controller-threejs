@@ -2,6 +2,16 @@ language: node_js
 node_js:
  - 11.6.0
 cache: npm
+  notifications:
+    email: false
+    slack: stampede-production:JBtLOLYw1Hoq2VIl1ZiQFxWC
+    on_success: always
+    on_failure: always 
+      template:
+        - "Repo `%{repository_slug}` *%{result}* build (<%{build_url}|#%{build_number}>) for commit (<%{compare_url}|%{commit}>) on branch `%{branch}`."
+        - "Execution time: *%{duration}*"
+        - "Message: %{message}"
+  
 jobs:
   include:
     - stage: compile

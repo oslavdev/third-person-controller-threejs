@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="0" errors="0" time="2.636">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-12-17T11:44:56" time="1.438" tests="1">
-    <testcase classname=" renders with App and root div" name=" renders with App and root div" time="0.009">
-    </testcase>
-  </testsuite>
-  <testsuite name="test paths" errors="0" failures="0" skipped="0" timestamp="2020-12-17T11:44:56" time="1.571" tests="6">
+<testsuites name="jest tests" tests="10" failures="0" errors="0" time="15.757">
+  <testsuite name="test paths" errors="0" failures="0" skipped="0" timestamp="2020-12-17T15:45:28" time="4.331" tests="6">
     <testcase classname="test paths Path home" name="test paths Path home" time="0.002">
     </testcase>
-    <testcase classname="test paths Path projects" name="test paths Path projects" time="0.001">
+    <testcase classname="test paths Path projects" name="test paths Path projects" time="0">
     </testcase>
     <testcase classname="test paths Path project" name="test paths Path project" time="0.001">
     </testcase>
@@ -18,8 +14,20 @@
     <testcase classname="test paths Path about" name="test paths Path about" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2020-12-17T11:44:56" time="1.579" tests="1">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-12-17T15:45:28" time="4.344" tests="1">
+    <testcase classname=" renders with App and root div" name=" renders with App and root div" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2020-12-17T15:45:28" time="4.469" tests="1">
     <testcase classname="App Snapshot" name="App Snapshot" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="Nav" errors="0" failures="0" skipped="0" timestamp="2020-12-17T15:45:28" time="4.482" tests="1">
+    <testcase classname="Nav Snapshot" name="Nav Snapshot" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="Light" errors="0" failures="0" skipped="0" timestamp="2020-12-17T15:45:28" time="4.498" tests="1">
+    <testcase classname="Light Snapshot" name="Light Snapshot" time="0.01">
     </testcase>
   </testsuite>
 </testsuites>
