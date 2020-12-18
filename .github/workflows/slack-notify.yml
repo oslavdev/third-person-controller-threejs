@@ -1,0 +1,12 @@
+on: push
+name: Slack Notification
+jobs:
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: partnerhero/action-webhook-slack-notify@v2.1.0
+      env:
+        SLACK_WEBHOOK: ${{ https://hooks.slack.com/services/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 }}
