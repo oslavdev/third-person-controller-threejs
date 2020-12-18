@@ -10,6 +10,7 @@ module.exports = merge(common, {
     contentBase: path.join(__dirname, 'dist'),
     allowedHosts: ['oslav-dev.local'],
     public: 'oslav-dev.local',
+    publicPath: '/',
     port: 443,
     https: {
       key: fs.readFileSync('https/key'),

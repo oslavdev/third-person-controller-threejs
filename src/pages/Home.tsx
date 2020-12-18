@@ -4,6 +4,7 @@ import Lights from "@/components/Three/Light";
 import Model from "@/components/Three/Model";
 import { getMousePos } from "@/utils/mouse";
 
+
 export default function Home() {
   const mouse = useRef({ x: 0, y: 0 })
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       camera={{ position: [0, 0, 300] }}
     >
       <Lights />
-      <Model url={"/model/scene.gltf"} mouse={mouse}/>
+      <Model url={"/public/model/scene.gltf"} mouse={mouse}/>
     </Canvas>
   )
 }

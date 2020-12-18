@@ -1,13 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const ENTRY_TS = 'ts'
 const ENTRY_CSS = 'css'
 
 module.exports = {
   entry: {
-    [ENTRY_CSS]: './src/public/styles/root.scss',
+    [ENTRY_CSS]: './public/styles/root.css',
     [ENTRY_TS]: './src/index.tsx',
   },
 
@@ -54,11 +55,18 @@ module.exports = {
         test: /\.(jpg|jpeg|png|gif|pdf|ico|mp4|obj)$/,
         loader: 'file-loader',
       },
+      {
+        test: /\.(gltf|bin|)$/,
+        loader: 'file-loader',
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/public', 'index.html'),
+      template: path.resolve(__dirname, 'public/', 'index.html'),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'public', to: 'public' }],
     }),
   ],
   optimization: {
