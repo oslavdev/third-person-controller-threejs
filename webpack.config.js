@@ -20,7 +20,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
-    hot: true,
+    hot: false,
   },
   module: {
     rules: [
@@ -56,7 +56,7 @@ module.exports = {
         loader: 'file-loader',
       },
       {
-        test: /\.(gltf|bin|)$/,
+        test: /\.(gltf|bin|fbx)$/,
         loader: 'file-loader',
       },
     ],
